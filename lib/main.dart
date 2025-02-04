@@ -1,25 +1,26 @@
+import 'package:app_arq/config/dependencies.dart';
 import 'package:flutter/material.dart';
+import 'package:routefly/routefly.dart';
+
+import 'main.route.dart';
+part 'main.g.dart';
 
 void main() {
-  runApp(const MyApp());
+  setupDependencies();
+
+  runApp(MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+@Main('lib/ui/')
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello, World!'),
-        ),
+    return MaterialApp.router(
+      routerConfig: Routefly.routerConfig(
+        routes: routes,
+        initialPath: routePaths.auth.login,
       ),
     );
   }
