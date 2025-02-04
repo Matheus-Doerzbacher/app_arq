@@ -17,16 +17,16 @@ class AuthClientHttp {
     // return response.map((response) => LoggedUser.fromJson(response.data));
 
     await Future.delayed(const Duration(seconds: 2));
-    // return Success(
-    //   LoggedUser(
-    //     id: '1',
-    //     name: 'Matheus',
-    //     email: 'matheus.doer@gmail.com',
-    //     token: '123',
-    //     refreshToken: '345',
-    //   ),
-    // );
+    return Success(
+      LoggedUser(
+        id: '1',
+        name: 'Matheus',
+        email: 'matheus.doer@gmail.com',
+        token: '123',
+        refreshToken: '345',
+      ),
+    );
 
-    return Failure(Exception('User not found'));
+    // return Failure(Exception('User not found'));
   }
 }

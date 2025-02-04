@@ -4,7 +4,9 @@ import 'package:app_arq/data/services/auth/auth_client_http.dart';
 import 'package:app_arq/data/services/auth/auth_local_storage.dart';
 import 'package:app_arq/data/services/client_http.dart';
 import 'package:app_arq/data/services/local_storage.dart';
+import 'package:app_arq/main_viewmodel.dart';
 import 'package:app_arq/ui/auth/login/viewmodels/login_viewmodel.dart';
+import 'package:app_arq/ui/auth/logout/viewmodels/logout_viewmodel.dart';
 import 'package:auto_injector/auto_injector.dart';
 import 'package:dio/dio.dart';
 
@@ -20,4 +22,6 @@ void setupDependencies() {
 
   // viewmodel
   injector.addSingleton(LoginViewModel.new);
+  injector.addSingleton(LogoutViewmodel.new);
+  injector.addSingleton(MainViewmodel.new);
 }

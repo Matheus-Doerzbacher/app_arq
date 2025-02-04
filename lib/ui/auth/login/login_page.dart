@@ -26,9 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _listenable() {
-    if (viewModel.loginCommand.isSuccess) {
-      Routefly.navigate(routePaths.home);
-    } else if (viewModel.loginCommand.isFailure) {
+    if (viewModel.loginCommand.isFailure) {
       final value = viewModel.loginCommand.value as FailureCommand;
       final snackBar = SnackBar(
         content: Text(value.error.toString()),

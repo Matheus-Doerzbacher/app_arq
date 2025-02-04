@@ -1,3 +1,4 @@
+import 'package:app_arq/ui/auth/logout/widgets/logout_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Home Page'),
+        child: LogoutButton(),
       ),
     );
   }
